@@ -1,0 +1,2 @@
+exportPattern(make_percentage)
+#importFrom(xml2,read_html)
