@@ -1,2 +1,8 @@
 exportPattern(make_percentage)
 #importFrom(xml2,read_html)
+exportPattern(transpose_df)
+
+importFrom(magrittr,"%>%")
+importFrom(tibble,rownames_to_column)
+importFrom(tidyr,gather)
+importFrom(tidyr,spread)
