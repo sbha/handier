@@ -1,8 +1,11 @@
-exportPattern(make_percentage)
+export(check_rprofile)
+export(make_percentage)
 #importFrom(xml2,read_html)
-exportPattern(transpose_df)
+export(transpose_df)
 
 importFrom(magrittr,"%>%")
 importFrom(tibble,rownames_to_column)
 importFrom(tidyr,gather)
 importFrom(tidyr,spread)
+importFrom(dplyr,enquo)
+#importFrom(dplyr,"!!")
