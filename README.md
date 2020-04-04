@@ -4,5 +4,5 @@ Handy R functions
 ## Installation
 ``` r
 # install.packages("devtools")
-devtools::install_github("sbha/handier  ")
+devtools::install_github("sbha/handier")
 ```
