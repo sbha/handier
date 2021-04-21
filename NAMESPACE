@@ -1,5 +1,6 @@
 export(check_missing_df)
 export(check_rprofile)
+export(is_defined)
 export(is_missing)
 export(make_percentage)
 #importFrom(xml2,read_html)
