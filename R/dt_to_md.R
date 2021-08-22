@@ -6,9 +6,14 @@ df_to_md <- function(x){
     x %>% 
       #as_tibble() %>% 
       #slice(1:5) %>% 
+      # mutate(md_start = '|') %>% 
+      # mutate(md_end = '|') %>% 
+      # unite(md_middle, everything(), sep = ' | ') %>% 
+      # select(md_start, md_middle, md_end) %>% 
+      # unite(md, md_start:md_end, sep = ' ') %>% 
+      unite(md_middle, everything(), sep = ' | ') %>% 
       mutate(md_start = '|') %>% 
       mutate(md_end = '|') %>% 
-      unite(md_middle, everything(), sep = ' | ') %>% 
       select(md_start, md_middle, md_end) %>% 
       unite(md, md_start:md_end, sep = ' ') %>% 
       unlist() %>% 
