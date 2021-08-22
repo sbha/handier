@@ -16,5 +16,6 @@ importFrom(magrittr,"%>%")
 importFrom(tibble,rownames_to_column)
 importFrom(tidyr,gather)
 importFrom(tidyr,spread)
+importFrom(tidyr,unite)
 
 #importFrom(dplyr,"!!")
