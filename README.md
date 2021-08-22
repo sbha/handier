@@ -12,7 +12,7 @@ Check a data frame for different types of missing data other than just `NA` with
 
 Search for rprofiles with `check_rprofile()`.
 
-Convert a dataframe to a simple markdown table `df_to_md(mtcars[1:5,])`:
+Print a dataframe as a simple markdown table `df_to_md(mtcars[1:5,])`:
 
 | mpg | cyl | disp | hp | drat | wt | qsec | vs | am | gear | carb |
 |---|---|---|---|---|---|---|---|---|---|---|
