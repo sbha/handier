@@ -8,7 +8,7 @@ df_to_md <- function(x){
       #slice(1:5) %>% 
       mutate(md_start = '|') %>% 
       mutate(md_end = '|') %>% 
-      unite(md_middle, mpg:carb, sep = ' | ') %>% 
+      unite(md_middle, everything(), sep = ' | ') %>% 
       select(md_start, md_middle, md_end) %>% 
       unite(md, md_start:md_end, sep = ' ') %>% 
       unlist() %>% 
