@@ -3,6 +3,7 @@ export(check_rprofile)
 export(is_defined)
 export(is_missing)
 export(make_percentage)
+export(df_to_md)
 #importFrom(xml2,read_html)
 export(transpose_df)
 
