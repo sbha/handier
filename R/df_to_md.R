@@ -1,5 +1,6 @@
 df_to_md <- function(x){
   # test if data frame
+  # na handling
   cat(
     paste('|', paste(names(x), collapse = ' | '), '|\n'),
     paste0('|', paste(rep('---|', ncol(x)), collapse = ''), '\n'),
@@ -15,3 +16,13 @@ df_to_md <- function(x){
   )
 }
 
+# :----
+# :---:
+# ----:
+# https://stackoverflow.com/questions/38539654/how-to-know-if-the-data-is-a-list-or-data-frame-in-r
+
+# starwars %>% 
+#   glimpse
+# 
+# nt <- map(starwars, class)
+# nt <- sapply(starwars, class)
