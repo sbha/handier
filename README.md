@@ -7,7 +7,10 @@ Handy R functions
 devtools::install_github("sbha/handier")
 ```
 
-Check a data frame for different types of missing data other than just `NA` with `is_missing()`. Use `dplyr::summarise_all(df, ~sum(is_missing(.)))` to get a count of missing values by column or `dplyr::summarise_all(df, ~(sum(is_missing(.) / nrow(df))))` to get the percentage missing by column. 
+
+## Usage
+
+Check a data frame for different types of missing data other than just `NA` with `is_missing()`. Default is to check for `is.na()`, `is.null()`, `is.nan()`, `is.infinite()` and string values `'unknown'`, `'missing'`, `''`, '`null'`, `'na'`, `'nan'`, `'-9'`, `'inf'`, `'-inf'` Use `dplyr::summarise_all(df, ~sum(is_missing(.)))` to get a count of missing values by column or `dplyr::summarise_all(df, ~(sum(is_missing(.) / nrow(df))))` to get the percentage missing by column. 
 
 
 Search for rprofiles with `check_rprofile()`.
