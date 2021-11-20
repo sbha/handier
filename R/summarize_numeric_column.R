@@ -3,6 +3,7 @@ summarize_numeric_column <- function(x){
     # column = quo_name(enquo(x)),
     column_type = typeof(x),
     observations = length(x),
+    complete = sum(!is.na(x)),
     missing = sum(is.na(x)),
     pct_missing = missing / observations,
     min = min(x, na.rm = TRUE),
