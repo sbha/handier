@@ -7,6 +7,7 @@ export(df_to_md)
 #importFrom(xml2,read_html)
 export(summarize_df_columns)
 export(summarize_numeric_column)
+export(summarize_character_column)
 export(transpose_df)
 
 importFrom(dplyr,enquo)
