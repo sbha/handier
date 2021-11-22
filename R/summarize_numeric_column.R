@@ -6,6 +6,8 @@ summarize_numeric_column <- function(x){
     complete = sum(!is.na(x)),
     missing = sum(is.na(x)),
     pct_missing = missing / observations,
+    distinct = length(unique(x)),
+    pct_distinct = distinct / observations,
     min = min(x, na.rm = TRUE),
     median = median(x, na.rm = TRUE),
     mean = mean(x, na.rm = TRUE),

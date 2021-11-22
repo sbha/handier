@@ -9,6 +9,8 @@ summarize_character_column <- function(x){
     complete = sum(!is.na(x)),
     missing = sum(is.na(x)),
     pct_missing = missing / observations,
+    distinct = length(unique(x)),
+    pct_distinct = distinct / observations,
     min_chars = min(nchar(x), na.rm = TRUE),
     median_chars = median(nchar(x), na.rm = TRUE),
     mean_chars = mean(nchar(x), na.rm = TRUE),
