@@ -7,7 +7,27 @@ calculate_table_percentage <- function(colname, as_decimal = FALSE){
   } else {
     p * 100
   }
-  
 }
 
 # starwars %>% count(species, sort = TRUE) %>% mutate(pct = calculate_table_percentage(n))
+
+
+ctp <- function(df, colname = 'n', as_decimal = FALSE, pct_name = 'pct'){
+  
+  df[[pct_name]] <- df[[colname]] / sum(df[[colname]])
+  
+  if (as_decimal == TRUE) {
+    df
+  } else {
+    df[[pct_name]] <- df[[pct_name]] * 100
+    df
+  }
+}
+
+# starwars %>% 
+#   count(species, sort = TRUE) %>%
+#   ctp
+# 
+# starwars %>% 
+#   count(species, sort = TRUE) %>%
+#   ctp('n', TRUE, 'percentage')

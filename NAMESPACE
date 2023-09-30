@@ -1,5 +1,7 @@
+export(calculate_table_percentage)
 export(check_missing_df)
 export(check_rprofile)
+export(ctp)
 export(row_to_colnames)
 export(df_to_md)
 export(is_defined)
