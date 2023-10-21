@@ -31,3 +31,9 @@ ctp <- function(df, colname = 'n', as_decimal = FALSE, pct_name = 'pct'){
 # starwars %>% 
 #   count(species, sort = TRUE) %>%
 #   ctp('n', TRUE, 'percentage')
+
+# starwars %>%
+#   count(species, sort = TRUE, name = 'cnt') %>%
+#   ctp('cnt', TRUE, 'percentage')
+
+# https://stackoverflow.com/a/36015931/3058123
