@@ -46,9 +46,9 @@ ctp <- function(df,
   }
 }
 
-starwars %>%
-  count(species, sort = TRUE) %>%
-  ctp
+# starwars %>%
+#   count(species, sort = TRUE) %>%
+#   ctp
 # 
 # starwars %>% 
 #   count(species, sort = TRUE) %>%
