@@ -1,4 +1,8 @@
-move_file <- function(file_name, from, to, remove = TRUE){
+move_file <- function(file_name,
+                      #rename
+                      from, 
+                      to, 
+                      remove = TRUE){
   
   from_path <- paste0(from, file_name)
   to_path <- paste0(to, file_name)
