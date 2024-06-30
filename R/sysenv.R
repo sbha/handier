@@ -23,12 +23,19 @@ check_sysenv_path <- function(var = 'PATH'){
 }
 
 
-search_sysenv_path <- function(x){
+search_sysenv_path <- function(x, ignore_case = FALSE){
   
   p <- check_sysenv_path()
   
-  p[grepl(x, p)]
-  
+  if (ignore_case){
+    
+    p[grepl(paste0('(?i)', x), p)]
+    
+  } else {
+    
+    p[grepl(x, p)]
+    
+  }
 }
 
 
