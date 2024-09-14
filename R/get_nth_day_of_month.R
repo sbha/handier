@@ -1,6 +1,12 @@
 get_nth_day_of_month <- function(nth = 'first',
                                  d_name = 'Mon',
-                                 d = Sys.Date()){
+                                 d = Sys.Date(),
+                                 ignore_dname_case = TRUE){
+  
+  if (ignore_dname_case) d_name <- str_to_title(d_name)
+  #d_name <- handier::day_to_abbr(d_name)
+  
+  nth <- str_to_lower(nth)
   
   nth_options <- c('first', 'second', 'third', 'fourth', 'last')
   
@@ -8,7 +14,6 @@ get_nth_day_of_month <- function(nth = 'first',
     stop(glue::glue("'{nth}' is not a valid option for nth"))
   }
   
-  #d_name <- handier::day_to_abbr(d_name)
   
   fd <- floor_date(Sys.Date(), "month")
   ld <- ceiling_date(Sys.Date(), "month") - 1
