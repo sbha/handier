@@ -15,8 +15,8 @@ get_nth_day_of_month <- function(nth = 'first',
   }
   
   
-  fd <- floor_date(Sys.Date(), "month")
-  ld <- ceiling_date(Sys.Date(), "month") - 1
+  fd <- floor_date(d, "month")
+  ld <- ceiling_date(d, "month") - 1
   
   seq(fd, length=day(ld), by='1 day') %>% 
     enframe(NULL, 'date') %>% 
