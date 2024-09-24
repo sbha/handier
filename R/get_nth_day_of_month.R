@@ -14,6 +14,7 @@ get_nth_day_of_month <- function(nth = 'first',
     stop(glue::glue("'{nth}' is not a valid option for nth"))
   }
   
+  if (!is.Date(d)) d <- as.Date(x)
   
   fd <- floor_date(d, "month")
   ld <- ceiling_date(d, "month") - 1
