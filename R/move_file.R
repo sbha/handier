@@ -18,8 +18,8 @@ move_file <- function(file_name,
   } else {
     
     file.copy(from = from_path,  to = to_path)
+    
   }
-  
   
 }
 
