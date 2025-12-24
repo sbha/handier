@@ -1,15 +1,13 @@
-
-#library(tidyverse)
-
 # dir_proj <- '.Rproj.user/291098C5/sources/session-f9b366/'
+
 
 remove_untitled_scripts <- function(
     dir_proj = '.Rproj.user/{pn}/sources/',
     dir_session = '.Rproj.user/{pn}/sources/{sn}/'
 ){
   
-  #
-  # project name
+  # project name 
+  # if multiple sessions exist, get the latest
   pn <- list.files('.Rproj.user/')
   pn <- pn[!str_detect(pn, 'shared')]
   
@@ -22,7 +20,6 @@ remove_untitled_scripts <- function(
     cat(fn, '\n')
     
     rj <- fromJSON(fn)
-    
     tn <- pluck(rj, 'properties', 'tempName')
     
     if (!is.null(tn)){
@@ -32,7 +29,6 @@ remove_untitled_scripts <- function(
         cat('ok!\n')
       }
     }
-    
   }
   
   df_untitled <- 
