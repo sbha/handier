@@ -11,8 +11,10 @@ remove_untitled_scripts <- function(
   pn <- list.files('.Rproj.user/')
   pn <- pn[!str_detect(pn, 'shared')]
   
+  dir_proj <- glue::glue(dir_proj)
+  
   # session name
-  sn <- list.files(glue::glue(dir_proj))
+  sn <- list.files(dir_proj)
   sn <- sn[str_detect(sn, 'session-')]
   
   find_untitled <- function(fn){
