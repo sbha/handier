@@ -17,24 +17,27 @@ remove_untitled_scripts <- function(
   sn <- list.files(dir_proj)
   sn <- sn[str_detect(sn, 'session-')]
   
+  dir_session <- glue::glue(dir_session)
+  
   find_untitled <- function(fn){
     
     cat(fn, '\n')
     
     rj <- fromJSON(fn)
-    tn <- pluck(rj, 'properties', 'tempName')
+    #tn <- pluck(rj, 'properties', 'tempName')
+    p <- pluck(rj, 'path')
+    pp <- pluck(rj, 'project_path')
     
-    if (!is.null(tn)){
-      if (str_detect(tn, 'Untitled')){
+    if (is.null(p) && is.null(pp)){
+      #if (str_detect(tn, 'Untitled')){
         enframe(fn, NULL, 'untitled_file')
       } else {
         cat('ok!\n')
       }
     }
-  }
   
   df_untitled <- 
-    list.files(dir_proj, full.names = TRUE) %>% 
+    list.files(dir_session, full.names = TRUE) %>% 
     enframe(NULL, 'file_name') %>% 
     filter(!str_detect(file_name, 'contents')) %>% 
     filter(!str_detect(file_name, 'lock_file')) %>% 
