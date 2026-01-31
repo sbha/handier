@@ -2,8 +2,11 @@
 
 
 remove_untitled_scripts <- function(
+    delete_files = FALSE,
     dir_proj = '.Rproj.user/{pn}/sources/',
-    dir_session = '.Rproj.user/{pn}/sources/{sn}/'
+    dir_session = '.Rproj.user/{pn}/sources/{sn}/',
+    prompt_interactive = TRUE,
+    ...
 ){
   
   # project name 
@@ -44,9 +47,26 @@ remove_untitled_scripts <- function(
     pull(file_name) %>% 
     map_df(find_untitled)
   
-  df_untitled %>% 
-    map(file.remove)
   
+  if (prompt_interactive && base::interactive()){
+    response <- menu(
+      c("No", "Yes"), 
+      title=glue::glue("Do you want to delete the following untitled scripts?\n {df_untitled}")
+      )
+    if (response == 2){
+      delete_files <- TRUE
+    } else {
+      delete_files <- FALSE
+    } 
+  }
+  
+  if (delete_files){
+    df_untitled %>% 
+      map(file.remove)
+  } else {
+    message('delete files set to FALSE. {nrow(df_untitled) not deleted}')
+    df_untitled
+  }
 }
 
 
