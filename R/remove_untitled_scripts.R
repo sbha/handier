@@ -27,12 +27,10 @@ remove_untitled_scripts <- function(
     cat(fn, '\n')
     
     rj <- fromJSON(fn)
-    #tn <- pluck(rj, 'properties', 'tempName')
     p <- pluck(rj, 'path')
     pp <- pluck(rj, 'project_path')
     
     if (is.null(p) && is.null(pp)){
-      #if (str_detect(tn, 'Untitled')){
         enframe(fn, NULL, 'untitled_file')
       } else {
         cat('ok!\n')
