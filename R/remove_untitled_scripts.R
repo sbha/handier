@@ -49,7 +49,7 @@ remove_untitled_scripts <- function(
   if (prompt_interactive && base::interactive()){
     response <- menu(
       c("No", "Yes"), 
-      title=glue::glue("Do you want to delete the following untitled scripts?\n {df_ut$untitled_file}")
+      title=glue::glue("Do you want to delete the following {nrow(df_untitled)} untitled files?\n {paste(df_untitled$untitled_file, collapse = ', ')}")
       )
     if (response == 2){
       delete_files <- TRUE
