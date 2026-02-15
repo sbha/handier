@@ -3,9 +3,9 @@ calculate_table_percentage <- function(colname, as_decimal = FALSE){
   p <- colname / sum(colname)
   
   if (as_decimal == TRUE) {
-    p
+    return(p)
   } else {
-    p * 100
+    return(p * 100)
   }
 }
 
@@ -29,7 +29,7 @@ ctp <- function(df,
   
   if (as_decimal) {
     
-    df
+    return(df)
     
   } else {
     
@@ -42,7 +42,8 @@ ctp <- function(df,
       
     }
     
-    df
+    return(df)
+    
   }
 }
 
